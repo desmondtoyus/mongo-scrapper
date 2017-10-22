@@ -1,5 +1,5 @@
 $("#btn-scrape").on('click', function () {
-    $.getJSON("/scrape", function (data) {
+    $.get("/scrape/", function (data) {
         if (!data) {
             alert("error");
         } else {
