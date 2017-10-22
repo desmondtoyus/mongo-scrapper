@@ -1,0 +1,43 @@
+<form id="myform" class="form-wizard">
+    <h2 class="form-wizard-heading">BootStap Wizzard Form</h2>
+    <input type="text" value=""/>
+    <input type="submit"/>
+</form>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+        <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+    </div>
+</div>
+jQuery:
+
+$('#myform').on('submit', function(ev) {
+    $('#my-modal').modal({
+        show: 'false'
+    }); 
+
+
+    var data = $(this).serializeObject();
+    json_data = JSON.stringify(data);
+    $("#results").text(json_data); 
+    $(".modal-body").text(json_data); 
+
+    // $("#results").text(data);
+
+    ev.preventDefault();
+});
+
+
+???//
+$('#myModal').modal('toggle');
+$('#myModal').modal('show');
+$('#myModal').modal('hide');

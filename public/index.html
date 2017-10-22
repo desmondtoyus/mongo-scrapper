@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mongo Scraper</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Mongo Scraper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="" id="show-saved">Saved Articles</a></li>
+      <li><a class="btn btn-danger scrape-new" id="btn-scrape">SCRAPE NEW ARTICLES!</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron text-center">
+  <div class="overlay">
+  </div>
+  <div class="background-image">
+  </div>
+  <div class="caption">
+    <h1>Mongo Scraper</h1>
+    <p>New York Times Edition</p>
+  </div>
+</div>
+
+<!-- Scrapped Items -->
+<div id="scraped-items">
+  
+</div>
+
+<!-- Modal -->
+<div class="modal fade forget-modal" tabindex="-1"  id="myModal" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Web Scraper</h4>
+      </div>
+      <div class="modal-body">
+        <p id="scrape-info"> </p>
+        
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div> <!-- /.modal-content -->
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<!-- //MODAL FOR NOTES -->
+<div class="modal fade forget-modal" tabindex="-1"  id="myModal2" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="article-id"> </h4>
+      </div>
+      <div class="modal-body">
+        <div class="well" id="haveNote"></div>
+       <!--  <input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off"> -->
+        <div class="form-group">
+  <label for="comment" id="noteType"></label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> -->
+        <button type="button" class="btn btn-default" id="save-note">Save</button>
+      </div>
+    </div> <!-- /.modal-content -->
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+
+<!-- <div class="container-fluid article-container">
+        <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div>
+
+<div class="container-fluid article-container">
+  <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div>
+
+<div class="container-fluid article-container">
+  <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div>
+
+<div class="container-fluid article-container">
+  <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div>
+
+
+<div class="container-fluid article-container">
+  <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div>
+
+<div class="container-fluid article-container">
+  <div class="panel panel-default"><div class="panel-heading"><h3><a class="article-link" target="_blank" href="https://www.nytimes.com/2017/10/20/dining/apple-pie-recipe.html">An Apple Pie That Lasts for Days</a><a class="btn btn-success save">Save Article</a></h3></div><div class="panel-body">How to make a super-size apple pie that will survive more than one sitting.</div></div>
+</div> -->
+
+<footer class="footer">
+  <div class="container">
+    <p>New York Times Mongo Scraper</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<!-- <script src="../../assets/javascript/index.js"></script> -->
+<script src="js/app.js"></script>
+</body>
+
+</html>
