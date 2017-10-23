@@ -29,9 +29,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 require('./routes/apiroutes')(app);
 // Database configuration with mongoose on localhost
-mongoose.connect("mongodb://localhost/webscraper");
+//mongoose.connect("mongodb://localhost/webscraper");
 // used on heroku to connect to mongoosedb
-// mongoose.connect("mongodb://heroku_mjmsrvht:7q5h7df2mp6eqcmu861jfihc13@ds129315.mlab.com:29315/heroku_mjmsrvht");
+ mongoose.connect("mongodb://heroku_mjmsrvht:7q5h7df2mp6eqcmu861jfihc13@ds129315.mlab.com:29315/heroku_mjmsrvht");
 var db = mongoose.connection;
 
 // Show any mongoose errors
